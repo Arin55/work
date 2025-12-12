@@ -89,7 +89,8 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+const PORT = process.env.PORT || 3001; // Changed default port to 3001
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`✅ Server is running on http://localhost:${PORT}`);
+    console.log(`🌐 Access it from other devices on your network using your local IP`);
 });

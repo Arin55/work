@@ -2,7 +2,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const todoInput = document.getElementById('todoInput');
     const addBtn = document.getElementById('addBtn');
     const todoList = document.getElementById('todoList');
-    const API_URL = 'http://localhost:3000/api/todos';
+    
+    // Use relative path for Vercel deployment
+    const API_BASE = '/api';
+    const API_URL = `${API_BASE}/todos`;
 
     // Fetch all todos
     async function fetchTodos() {
